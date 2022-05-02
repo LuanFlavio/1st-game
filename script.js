@@ -18,6 +18,7 @@ var obj = {
   edgeDown: cnv.height
 };
 var ready = false;
+var impactColor = '#26a400';
 
 var obs = {
   x: 10,
@@ -29,8 +30,8 @@ var obs = {
 
 update();
 
-window.addEventListener("keydown",keydownHandler);
-window.addEventListener("keyup",keyupHandler);
+window.addEventListener("keydown", keydownHandler);
+window.addEventListener("keyup", keyupHandler);
 
 function keydownHandler(e){
   var key = e.keyCode;
@@ -136,19 +137,19 @@ function body(){
 function limit(){
   if (obj.edgeLeft <= 0){
     moveLeft = false;
-    ctx.fillStyle = "#fff000";
+    ctx.fillStyle = impactColor;
   }
   if (obj.edgeUp <= 0){
     moveUp = false;
-    ctx.fillStyle = "#fff000";
+    ctx.fillStyle = impactColor;
   }
   if (obj.edgeRight >= cnv.width){
     moveRight = false;
-    ctx.fillStyle = "#fff000";
+    ctx.fillStyle = impactColor;
   }
   if (obj.edgeDown >= cnv.height){
     moveDown = false;
-    ctx.fillStyle = "#fff000";
+    ctx.fillStyle = impactColor;
   }
 }
 

@@ -1,58 +1,88 @@
 body{
-    background-color: #2a406e;
+    background-color: #0C0F0A;
     margin: 0;
     padding: 0;
 }
-#back{
-    width: 50%;
-    margin: auto;
+.container{
+    width: 50vw;
+    margin: 5vh auto;
+    padding: 5rem 0;
+}
+.flex{
+    display: flex;
 }
 canvas{
-    margin-left: auto;
-    margin-right: auto;
+    position: absolute;
+    margin: 50px;
     display: block;
-    border: solid 3px;
+    /* border: #000 solid 1px; */
+    border-radius: 0.5rem;
+    background: #700B97;
+    box-shadow: inset 5px 5px 20px rgba(0, 0, 0, .8);
+    z-index: 1;
+}
+.board{
+    background-color: #3E065F;
+    width: 500px;
+    height: 400px;
+    margin: auto;
+    border-radius: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .8);
+    overflow: hidden;
+    cursor: pointer;
+}
+.board:hover .glass{
+    animation: glass 1.5s ease-in-out infinite 1s;
+}
+.board:hover .glass:last-child{
+    animation: glass 1.2s ease-in-out infinite 1s;
+}
+.glass{
+    position: relative;
+    width: 40px;
+    height: 400px;
+    transform: skewX(-45deg) translateX(-20rem);
+    background: #ffffff30;
+    /* animation: glass 1.5s ease-in-out infinite 2s; */
+}
+.glass:last-child{
+    transition: 0.8s;
+    top: -100%;
+    /* animation: glass 1.2s ease-in-out infinite 2s; */
 }
 .footer{
     padding: 20px;
     width: 100%;
     height: auto;
-    display: flex;
 }
-.meio{
-    width: 50%;
-    margin: 0;
-    padding: 10px;
+.center-item{
+    align-items: center;
+    justify-content: space-around;
 }
-#btnStart{
-    width: 100%;
-    height: 60px;
-    display: inline-block;
-    background-color: transparent;
-    color: #fff;
-    text-align: center;
+.btn{
+    width: 20rem;
+    height: 5rem;
     font-size: 2em;
-    font-stretch: narrower;
-    border: 5px solid #2a40e5;
+    color: #8E05C2;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 1rem;
+    border: 0.6rem solid #3E065F;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .8);
+    background-color: transparent;
 }
-#btnStart:hover{
-    color: #2a40e5;
-    background-color: #abc0f8;
+.btn:hover{
+    color: #3E065F;
+    background-color: #8E05C2;
     cursor: pointer;
 }
-#btnGameOver{
-    width: 100%;
-    height: 60px;
-    display: inline-block;
-    background-color: transparent;
-    color: #fff;
-    text-align: center;
-    font-size: 2em;
-    font-stretch: narrower;
-    border: 5px solid #2a40e5;
-}
-#btnGameOver:hover{
-    color: #2a40e5;
-    background-color: #abc0f8;
-    cursor: pointer;
+
+@keyframes glass {
+    from{
+        transform: skewX(-45deg) translateX(-20rem);
+    }
+    to{
+        transform: skewX(-45deg) translateX(50rem);
+    }
 }

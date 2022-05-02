@@ -7,14 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="back">
-        <canvas width="400" height="300"></canvas>
+    <div class="container center-item">
+        <div class="board">
+            <canvas width="400" height="300"></canvas>
+            <div class="glass"></div>
+            <div class="glass"></div>
+        </div>
         <div class="footer">
-            <div class="meio">
-                <input id="btnStart" type="button" name="Start" value="Start" onclick="Start()">
-            </div>
-            <div class="meio">
-                <input id="btnGameOver" type="button" name="GameOver" value="Game Over" onclick="GameOver()">
+            <div class="flex center-item">
+                <input class="btn" id="btnStart" type="button" name="Start" value="Start" onclick="Start()">
+                <input class="btn" id="btnGameOver" type="button" name="GameOver" value="Game Over" onclick="GameOver()">
             </div> 
         </div>
     </div>
